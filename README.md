@@ -1,8 +1,8 @@
-# Project Name
+# Hbooks
 
 This is a simple yet functional website with the sole purpose of ranking programming book.
 Registered users can vote and comment on submissions, the ranking algorithm his inspired from reddit.com and news.ycombinator.com.
-Made with Sinatra using a PostgreSQL database.
+Made with *Sinatra* using a *PostgreSQL* database.
 
 ![Logged-in_screenshot](/Logged-in_screenshot.png)
 ![Logged-out_screenshot](/Logged-out_screenshot.png)
