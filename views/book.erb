@@ -1,0 +1,29 @@
+<div class="book-info">
+<p>
+	<a href=<%= "'#{@book.link}'>#{@book.title}"%></a>
+</p>
+<p> 
+	<%= " #{@book.votes} #{@book.votes > 1 ? 'points' : 'point'} by #{@book.user ? @book.user.name : 'unknown'} #{display_time(@book.timestamp) if !!@book.timestamp} | <a href='https://duckduckgo.com/?q=#{@book.title}'>web</a> |"%>
+		 <a href="/book/<%= @book.id %>">
+	 <%= @book.comment.size > 0 ? "#{@book.comment.size} #{@book.comment.size > 1 ? 'comments' : 'comment'}" :
+		  'discuss' %></a>
+</p>
+</div>
+<div class="book-comment-new">
+<form action="/book/comment" method="post">
+	<input type="hidden" name="book_id" value="<%= @book.id %>">
+	<textarea name="body" id="" cols="60" rows="10"></textarea>
+	<button>add comment</button>
+</form>
+</div>
+<div class="book-comment">
+<ul>
+<% @bookcom.each do |comment| %>
+	<li>
+<!-- User.find_by(id: Comment.last.user_id).name -->
+		<p id="comment-user">by <%= @user.find_by(id: comment.user_id).name %> <%= display_time(comment.timestamp) %></p>
+		<p id="comment-body"><%= comment.body %></p>
+	</li>
+<% end %>
+</ul>
+</div>

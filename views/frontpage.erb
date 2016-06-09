@@ -1,0 +1,17 @@
+<ol>
+<% @rank.order(:rank).each do |rank|%>
+	<li>
+	<p>
+		<% 	book_id = rank.book_id
+				book = Book.find_by(id: book_id)
+		%>
+		<%= display_votes(rank.book_id) %>	
+		<a href=<%= "'#{book.link}'>#{book.title}"%></a>
+	</p>
+	<p> 
+		 <%= "#{book.votes} #{book.votes > 1 ? 'points' : 'point'} by #{book.user ? book.user.name : 'unknown'} #{display_time(book.timestamp) if !!book.timestamp} | "%>
+		 <a href="/book/<%= book.id %>"><%= book.comment.size > 0 ? "#{book.comment.size} #{book.comment.size > 1 ? 'comments' : 'comment'}" : 'discuss' %></a>
+	</p>
+	</li>
+<% end %>
+</ol>

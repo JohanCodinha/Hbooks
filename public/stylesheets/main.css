@@ -1,0 +1,110 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+}
+a {
+	color:#6f6969;
+}
+a:hover{
+	text-decoration: underline;
+}
+html {
+	background-color: white;
+}
+
+.Site {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.Site-content {
+	flex: 1 0 auto;
+	/*width: 100%;*/
+	margin: 0 2%;
+	padding: 3%;
+	background-color: #dcd7e6;
+}
+
+.Site-header,
+.Site-footer {
+	flex: none;
+}
+
+.Header {
+	display: flex;
+	flex-flow: row wrap;
+	padding: 1em;
+	background-color: #513985;
+	color: white;
+}
+.Header a {
+	color: white;
+	text-decoration: none;
+}
+
+.Header-title {
+	display: flex;
+	flex-grow: 3;
+	flex-flow: row wrap;
+}
+
+.Header-menu {
+	display: flex;
+	flex-grow: 1;
+	align-items: flex-end;
+}
+
+ul#Header-links {
+	list-style-type: none;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#Header-links {
+	flex-grow: 1;
+}
+
+/*ul {
+    display: flex;
+    flex-flow: row wrap;
+}*/
+ul li {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.Site-footer {
+	text-align: center;
+	background-color: #513985;
+	color: white;
+}
+
+ol li {
+	margin-bottom: 10px;
+	border-bottom: 1px dashed #513985;
+	padding-bottom: 3px;
+}
+
+.book-info {
+	margin-bottom: 20px;
+}
+
+.book-comment ul li {
+	text-align: left;
+	text-decoration: none;
+	list-style: none;
+}
+
+#comment-user {
+	color: #6f6969;
+	font-size: .8em;
+}
+#comment-body {
+	padding-left: 10px;f
+}
+
+
+

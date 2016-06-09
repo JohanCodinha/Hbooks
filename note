@@ -1,0 +1,56 @@
+color #513985
+
+
+Visual Basic 6 For Dummies is ranked 1
+#votes : 1 | hours : 3
+Internet (First Discovery Books) is ranked 3
+#votes : 3 | hours : 6
+JavaScript: The Good Parts 1st Edition is ranked 2
+#votes : 2 | hours : 5
+Elegant Objects is ranked 3
+#votes : 3 | hours : 5
+Exploring Arduino: Tools and Techniques for Engineering Wizardry is ranked 1
+#votes : 1 | hours : 0
+
+Visual Basic 6 For Dummies is ranked 1
+#votes : 1 | hours : 14
+JavaScript: The Good Parts 1st Edition is ranked 2
+#votes : 2 | hours : 16
+Elegant Objects is ranked 3
+#votes : 3 | hours : 16
+Exploring Arduino: Tools and Techniques for Engineering Wizardry is ranked 1
+#votes : 1 | hours : 10
+Internet (First Discovery Books) is ranked 4
+#votes : 4 | hours : 16
+
+Rank.order(:rank)
+
+#<Rank:0x007fc7cf90b610 id: 21, book_id: 16, rank: 1>,
+ #<Rank:0x007fc7cf90b4a8 id: 22, book_id: 14, rank: 2>,
+ #<Rank:0x007fc7cf90b2c8 id: 23, book_id: 15, rank: 3>,
+ #<Rank:0x007fc7cf90b188 id: 24, book_id: 17, rank: 1>,
+ #<Rank:0x007fc7cf90b048 id: 25, book_id: 13, rank: 4>
+
+ #<Rank:0x007fc7cc536858 id: 21, book_id: 16, rank: 1>,
+ #<Rank:0x007fc7cc536560 id: 22, book_id: 14, rank: 2>,
+ #<Rank:0x007fc7cc536038 id: 23, book_id: 15, rank: 3>,
+ #<Rank:0x007fc7cc535de0 id: 24, book_id: 17, rank: 1>,
+ #<Rank:0x007fc7cc535b38 id: 25, book_id: 13, rank: 4>
+
+
+
+ <ol>
+<% @books.each do |book|%>
+	<li>
+	<p>
+		<%= display_votes(book.id) %>	
+		<a href=<%= "'#{book.link}'>#{book.title}"%></a>
+	</p>
+	<p> 
+		 <%= "#{book.votes} #{book.votes > 1 ? 'points' : 'point'} by #{book.user ? book.user.name : 'unknown'} #{display_time(book.timestamp) if !!book.timestamp} | "%>
+		 <a href="/book/<%= book.id %>"><%= book.comment.size > 0 ? "#{book.comment.size} #{book.comment.size > 1 ? 'comments' : 'comment'}" : 'discuss' %></a>
+	</p>
+	</li>
+<% end %>
+</ol>
+

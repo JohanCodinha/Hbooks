@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HBooks</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+<body class="Site">
+	<header class="Site-header">
+	<div class="Header">
+		<div class="Header-title">
+			
+			<a href="/"><h1>HBooks</h1></a>
+		</div>
+		<div class="Header-menu">
+			<ul id="Header-links">
+				<li>
+					<a href="/submit">submit</a>
+				</li>
+					<% if logged_in? %>
+						<li>logged in as <%= current_user.name %></li>
+						<li>
+						<form action="/session" method="post" id="logout" >
+							<input type="hidden" value="delete" name="_method">
+							<button>logout</button>
+						</form>
+						</li>
+					<% else %>
+						<li>
+						<a href="/session/new">log-in</a>
+						</li>
+						<li>
+						<a href="/signin">sign-in</a>
+						</li>
+					<% end %>
+				</li>
+				</ul>
+		</div>
+	</div>
+	</header>
+	<main class="Site-content">
+	  <%= yield %>
+	</main>
+	<footer class="Site-footer">
+	<p>Made with ❤︎ by Johan Codinha</p>
+	</footer>
+</body>
